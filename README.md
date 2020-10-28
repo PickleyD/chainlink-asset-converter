@@ -1,3 +1,3 @@
-# chainlink-currencyy
+# chainlink-currency-converter
 
 description
