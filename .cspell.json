@@ -18,6 +18,7 @@
     "globby",
     "libauth",
     "mkdir",
+    "pathing",
     "prettierignore",
     "sandboxed",
     "transpiled",
