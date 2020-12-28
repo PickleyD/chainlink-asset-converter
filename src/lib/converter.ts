@@ -1,42 +1,56 @@
 import { ethers } from 'ethers';
-import { getShortestPath, Path, PathSection } from './shortestPath';
+
 import { Feed, mainnetPriceFeeds } from './priceFeeds';
+import { getShortestPath, Path, PathSection } from './shortestPath';
 
 export type ConvertProps = {
-  amount: number;
-  from: string;
-  to: string;
-  provider: ethers.providers.JsonRpcProvider;
-  feeds?: readonly Feed[];
+  readonly amount: number;
+  readonly from: string;
+  readonly to: string;
+  readonly provider: ethers.providers.JsonRpcProvider;
+  readonly feeds?: readonly Feed[];
 };
 
-export const convert = ({
-  amount,
+export const convert = async ({
+  amount = 0,
   from,
   to,
   provider,
   feeds = mainnetPriceFeeds,
 }: ConvertProps) => {
+  if (amount === 0) return 0;
+
+  if (from == null) Promise.reject(new Error("'from' must be defined"));
+  if (to == null) Promise.reject(new Error("'to' must be defined"));
+  if (provider == null) Promise.reject(new Error("'provider' must be defined"));
+
   const shortestPath: Path = getShortestPath(from, to, feeds);
 
-  const result = shortestPath.reduce(
-    (newAmount: number, pathSection: PathSection) => {
-      const { feedId, inverse } = pathSection;
-      const { address: feedAddress, decimals } = feeds.find(
+  const getLatestAnswerPromises = shortestPath.map(
+    (pathSection: PathSection) => {
+      const { feedId } = pathSection;
+      const { address: feedAddress } = feeds.find(
         (feed: Feed) => feed.id === feedId
       );
       const aggregatorContract = createAggregatorContract(
         feedAddress,
         provider
       );
-      const { answer } = getLatest(aggregatorContract);
+      return getLatest(aggregatorContract);
+    }
+  );
 
+  const latestAnswers = await Promise.all(getLatestAnswerPromises);
+
+  const result: number = shortestPath.reduce(
+    (_newAmount: number, pathSection: PathSection, index: number): number => {
+      const { feedId, inverse } = pathSection;
+      const { decimals } = feeds.find((feed: Feed) => feed.id === feedId);
+
+      const { answer } = latestAnswers[index];
       // TODO: Use big number lib
       const exchangeRate = answer / decimals;
-      newAmount = inverse
-        ? (1.0 / exchangeRate) * amount
-        : exchangeRate * amount;
-      return newAmount;
+      return inverse ? (1.0 / exchangeRate) * amount : exchangeRate * amount;
     },
     0
   );
@@ -107,4 +121,4 @@ const createAggregatorContract = (
   return new ethers.Contract(address, aggregatorV3InterfaceABI, provider);
 };
 
-export const getLatest = (contract) => contract.latestRoundData();
+export const getLatest = async (contract) => await contract.latestRoundData();

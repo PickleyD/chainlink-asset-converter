@@ -1,9 +1,9 @@
 import test from 'ava';
-import sinon from 'sinon';
 import { ethers } from 'ethers';
+import sinon from 'sinon';
 
-import { Feed } from './priceFeeds';
 import { convert } from './converter';
+import { Feed } from './priceFeeds';
 
 const testFeedsA: readonly Feed[] = [
   {
@@ -33,7 +33,7 @@ test.afterEach(() => {
   sinon.restore();
 });
 
-test('convert test', (t) => {
+test('convert test', async (t) => {
   const provider = sinon.fake();
 
   const contractConstructorStub = sinon.stub();
@@ -45,14 +45,13 @@ test('convert test', (t) => {
 
   sinon.replace(ethers, 'Contract', contractConstructorStub);
 
-  t.deepEqual(
-    convert({
-      amount: 5,
-      from: 'A',
-      to: 'B',
-      provider,
-      feeds: testFeedsA,
-    }),
-    500
-  );
+  const result = await convert({
+    amount: 5,
+    from: 'A',
+    to: 'B',
+    provider,
+    feeds: testFeedsA,
+  });
+
+  t.deepEqual(result, 500);
 });

@@ -1,6 +1,6 @@
 import { Feed, mainnetPriceFeeds } from './priceFeeds';
 
-export type Path = PathSection[];
+export type Path = readonly PathSection[];
 
 export type PathSection = {
   readonly feedId: number;
