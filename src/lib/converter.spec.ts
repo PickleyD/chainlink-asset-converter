@@ -137,3 +137,31 @@ test('5D to 250A', async (t) => {
 
   t.deepEqual(result, 250);
 });
+
+test('.001C to .000001D', async (t) => {
+  const provider = sinon.fake();
+
+  const result = await convert({
+    amount: 0.001,
+    from: 'C',
+    to: 'D',
+    provider,
+    feeds: testFeedsA,
+  });
+
+  t.deepEqual(result, 0.000001);
+});
+
+test('1000000A to 100000000B', async (t) => {
+  const provider = sinon.fake();
+
+  const result = await convert({
+    amount: 1000000,
+    from: 'A',
+    to: 'B',
+    provider,
+    feeds: testFeedsA,
+  });
+
+  t.deepEqual(result, 100000000);
+});
