@@ -8,7 +8,8 @@ export type ConvertProps = {
   readonly amount: number;
   readonly from: string;
   readonly to: string;
-  readonly provider: ethers.providers.JsonRpcProvider;
+  readonly provider?: ethers.providers.JsonRpcProvider;
+  readonly endpoint?: string;
   readonly feeds?: readonly Feed[];
 };
 
@@ -16,14 +17,26 @@ export const convert = async ({
   amount = 0,
   from,
   to,
-  provider,
+  provider = null,
+  endpoint = '',
   feeds = mainnetPriceFeeds,
 }: ConvertProps) => {
   if (amount === 0) return 0;
 
-  if (from == null) return new Error("'from' must be defined");
-  if (to == null) return new Error("'to' must be defined");
-  if (provider == null) return new Error("'provider' must be defined");
+  if (provider == null && endpoint == '') {
+    return Promise.reject(
+      new Error(`Either 'provider' or 'endpoint' must be defined`)
+    );
+  }
+
+  if (from == null) {
+    return Promise.reject(new Error(`'from' must be defined`));
+  }
+  if (to == null) {
+    return Promise.reject(new Error(`'to' must be defined`));
+  }
+
+  const internalProvider = provider ? provider : createProvider(endpoint);
 
   const shortestPath: Path = getShortestPath(from, to, feeds);
 
@@ -37,7 +50,7 @@ export const convert = async ({
       );
       const aggregatorContract = createAggregatorContract(
         feedAddress,
-        provider
+        internalProvider
       );
       return getLatest(aggregatorContract);
     }
@@ -68,6 +81,9 @@ export const convert = async ({
   return result.toNumber();
 };
 
+/**
+ * @param endpoint Your Ethereum JSON-RPC endpoint
+ */
 export const createProvider = (
   endpoint: string
 ): ethers.providers.JsonRpcProvider => {
@@ -131,4 +147,8 @@ const createAggregatorContract = (
   return new ethers.Contract(address, aggregatorV3InterfaceABI, provider);
 };
 
-export const getLatest = async (contract) => await contract.latestRoundData();
+/**
+ * @ignore
+ * @param contract
+ */
+const getLatest = async (contract) => await contract.latestRoundData();

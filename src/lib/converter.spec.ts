@@ -165,3 +165,31 @@ test('1000000A to 100000000B', async (t) => {
 
   t.deepEqual(result, 100000000);
 });
+
+test('No endpoint + no provider', async (t) => {
+  const promise = convert({
+    amount: 1,
+    from: 'A',
+    to: 'B',
+    feeds: testFeedsA,
+  });
+
+  const error = await t.throwsAsync(promise);
+
+  t.is(error.message, `Either 'provider' or 'endpoint' must be defined`);
+});
+
+test('No provider, only endpoint', async (t) => {
+  const providerFake = sinon.fake();
+  sinon.replace(ethers.providers, 'JsonRpcProvider', providerFake);
+
+  const result = await convert({
+    amount: 1,
+    from: 'A',
+    to: 'A',
+    feeds: testFeedsA,
+    endpoint: 'http://localhost:test',
+  });
+
+  t.deepEqual(result, 1);
+});
