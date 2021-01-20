@@ -20,11 +20,13 @@ export const convert = async ({
 }: ConvertProps) => {
   if (amount === 0) return 0;
 
-  if (from == null) Promise.reject(new Error("'from' must be defined"));
-  if (to == null) Promise.reject(new Error("'to' must be defined"));
-  if (provider == null) Promise.reject(new Error("'provider' must be defined"));
+  if (from == null) return new Error("'from' must be defined");
+  if (to == null) return new Error("'to' must be defined");
+  if (provider == null) return new Error("'provider' must be defined");
 
   const shortestPath: Path = getShortestPath(from, to, feeds);
+
+  if (shortestPath.length === 0) return amount;
 
   const getLatestAnswerPromises = shortestPath.map(
     (pathSection: PathSection) => {
@@ -48,11 +50,12 @@ export const convert = async ({
       const { decimals } = feeds.find((feed: Feed) => feed.id === feedId);
 
       const { answer } = latestAnswers[index];
-      // TODO: Use big number lib
-      const exchangeRate = answer / decimals;
-      return inverse ? (1.0 / exchangeRate) * amount : exchangeRate * amount;
+      const exchangeRate = answer / 10 ** decimals;
+      return inverse
+        ? (1.0 / exchangeRate) * _newAmount
+        : exchangeRate * _newAmount;
     },
-    0
+    amount
   );
 
   return result;

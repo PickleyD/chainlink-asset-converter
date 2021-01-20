@@ -78,9 +78,8 @@ const getShortestPathRecursively = (
   // Find all feeds containing our 'fromCurrency' in their 'to' prop
   const matchingToFeeds = getFeedsWhereToMatches(fromCurrency, feeds);
 
-  // No feed contains our 'fromCurrency' so return null
-  if (matchingFromFeeds.length === 0 && matchingToFeeds.length === 0)
-    return null;
+  // No feed contains our 'fromCurrency' so return empty array
+  if (matchingFromFeeds.length === 0 && matchingToFeeds.length === 0) return [];
 
   const pathSectionsToTraverse: readonly PathSection[] = [
     ...matchingFromFeeds.map((feed: Feed) => ({
