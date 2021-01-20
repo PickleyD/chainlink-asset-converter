@@ -1,3 +1,4 @@
+import { BigNumber } from 'bignumber.js';
 import { ethers } from 'ethers';
 
 import { Feed, mainnetPriceFeeds } from './priceFeeds';
@@ -44,21 +45,27 @@ export const convert = async ({
 
   const latestAnswers = await Promise.all(getLatestAnswerPromises);
 
-  const result: number = shortestPath.reduce(
-    (_newAmount: number, pathSection: PathSection, index: number): number => {
+  const result: BigNumber = shortestPath.reduce(
+    (
+      _newAmount: BigNumber,
+      pathSection: PathSection,
+      index: number
+    ): BigNumber => {
       const { feedId, inverse } = pathSection;
       const { decimals } = feeds.find((feed: Feed) => feed.id === feedId);
 
       const { answer } = latestAnswers[index];
-      const exchangeRate = answer / 10 ** decimals;
+      const exchangeRate = new BigNumber(answer).dividedBy(
+        new BigNumber(10).exponentiatedBy(decimals)
+      );
       return inverse
-        ? (1.0 / exchangeRate) * _newAmount
-        : exchangeRate * _newAmount;
+        ? new BigNumber(1).dividedBy(exchangeRate).multipliedBy(_newAmount)
+        : exchangeRate.multipliedBy(_newAmount);
     },
-    amount
+    new BigNumber(amount)
   );
 
-  return result;
+  return result.toNumber();
 };
 
 export const createProvider = (
