@@ -1,6 +1,6 @@
 {
   "name": "chainlink-currency-converter",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.1",
   "description": "description",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",

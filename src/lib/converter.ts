@@ -4,23 +4,61 @@ import { ethers } from 'ethers';
 import { Feed, mainnetPriceFeeds } from './priceFeeds';
 import { getShortestPath, Path, PathSection } from './shortestPath';
 
+/** Options for {@link convert} */
 export type ConvertProps = {
+  /**
+   * The amount of the `from` currency to convert
+   */
   readonly amount: number;
+  /**
+   * The currency to convert from
+   */
   readonly from: string;
+  /**
+   * The currency to convert to
+   */
   readonly to: string;
+  /**
+   * The JsonRpcProvider (either this or the `endpoint` must be provided)
+   */
   readonly provider?: ethers.providers.JsonRpcProvider;
+  /**
+   * The JSON RPC endpoint (either this or the `provider` must be provided)
+   */
   readonly endpoint?: string;
+  /**
+   * Optionally pass in a custom array of price feeds
+   */
   readonly feeds?: readonly Feed[];
 };
 
-export const convert = async ({
-  amount = 0,
-  from,
-  to,
-  provider = null,
-  endpoint = '',
-  feeds = mainnetPriceFeeds,
-}: ConvertProps) => {
+/**
+ * Convert a known amount in one currency to some amount of another currency.
+ *
+ * ### Example
+ * ``` typescript
+ * await convert({
+ *  amount: 5,
+ *  from: 'ETH',
+ *  to: 'BTC',
+ *  endpoint: 'https://mainnet.infura.io/v3/ab01ab01ab01ab01ab01ab01'
+ * });
+ * // => 0.2
+ * ```
+ *
+ * @param {ConvertProps} options
+ * @returns The resulting amount of the `to` currency after conversion
+ */
+export const convert = async (options: ConvertProps) => {
+  const {
+    amount = 0,
+    from,
+    to,
+    provider = null,
+    endpoint = '',
+    feeds = mainnetPriceFeeds,
+  } = options;
+
   if (amount === 0) return 0;
 
   if (provider == null && endpoint == '') {
@@ -90,6 +128,11 @@ export const createProvider = (
   return new ethers.providers.JsonRpcProvider(endpoint);
 };
 
+/**
+ * @ignore
+ * @param address
+ * @param provider
+ */
 const createAggregatorContract = (
   address: string,
   provider: ethers.providers.JsonRpcProvider

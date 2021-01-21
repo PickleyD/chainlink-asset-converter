@@ -41,7 +41,7 @@ test.before(() => {
     .withArgs('0xAB', sinon.match.any, sinon.match.any)
     .returns({
       latestRoundData: () => ({
-        answer: 10000000000,
+        answer: 10_000_000_000,
       }),
     });
 
@@ -49,7 +49,7 @@ test.before(() => {
     .withArgs('0xBC', sinon.match.any, sinon.match.any)
     .returns({
       latestRoundData: () => ({
-        answer: 20000000,
+        answer: 20_000_000,
       }),
     });
 
@@ -57,7 +57,7 @@ test.before(() => {
     .withArgs('0xCD', sinon.match.any, sinon.match.any)
     .returns({
       latestRoundData: () => ({
-        answer: 100000,
+        answer: 100_000,
       }),
     });
 
@@ -149,21 +149,21 @@ test('.001C to .000001D', async (t) => {
     feeds: testFeedsA,
   });
 
-  t.deepEqual(result, 0.000001);
+  t.deepEqual(result, 0.000_001);
 });
 
 test('1000000A to 100000000B', async (t) => {
   const provider = sinon.fake();
 
   const result = await convert({
-    amount: 1000000,
+    amount: 1_000_000,
     from: 'A',
     to: 'B',
     provider,
     feeds: testFeedsA,
   });
 
-  t.deepEqual(result, 100000000);
+  t.deepEqual(result, 100_000_000);
 });
 
 test('No endpoint + no provider', async (t) => {
