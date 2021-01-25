@@ -1,11 +1,11 @@
 {
-  "name": "chainlink-currency-converter",
+  "name": "chainlink-asset-converter",
   "version": "0.0.1-alpha.1",
   "description": "Asset conversion utils powered by Chainlink price feeds",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/PickleyD/chainlink-currency-converter",
+  "repository": "https://github.com/PickleyD/chainlink-asset-converter",
   "license": "MIT",
   "keywords": [],
   "scripts": {
