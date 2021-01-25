@@ -1,0 +1,533 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>chainlink-asset-converter</title>
+	<meta name="description" content="Documentation for chainlink-asset-converter">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">chainlink-asset-converter</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>chainlink-asset-converter</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias"><a href="globals.html#convertprops" class="tsd-kind-icon">Convert<wbr>Props</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#feed" class="tsd-kind-icon">Feed</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#path" class="tsd-kind-icon">Path</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#pathsection" class="tsd-kind-icon">Path<wbr>Section</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable"><a href="globals.html#btc_eth_aggregator" class="tsd-kind-icon">BTC_<wbr>ETH_<wbr>AGGREGATOR</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#btc_usd_aggregator" class="tsd-kind-icon">BTC_<wbr>USD_<wbr>AGGREGATOR</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#eth_usd_aggregator" class="tsd-kind-icon">ETH_<wbr>USD_<wbr>AGGREGATOR</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#link_eth_aggregator" class="tsd-kind-icon">LINK_<wbr>ETH_<wbr>AGGREGATOR</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#link_usd_aggregator" class="tsd-kind-icon">LINK_<wbr>USD_<wbr>AGGREGATOR</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#mainnetpricefeeds" class="tsd-kind-icon">mainnet<wbr>Price<wbr>Feeds</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#supportedassets" class="tsd-kind-icon">supported<wbr>Assets</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="globals.html#convert" class="tsd-kind-icon">convert</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#createprovider" class="tsd-kind-icon">create<wbr>Provider</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#getshortestpath" class="tsd-kind-icon">get<wbr>Shortest<wbr>Path</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="convertprops" class="tsd-anchor"></a>
+					<h3>Convert<wbr>Props</h3>
+					<div class="tsd-signature tsd-kind-icon">Convert<wbr>Props<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>amount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>endpoint<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>feeds<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">readonly </span><a href="globals.html#feed" class="tsd-signature-type">Feed</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>from<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>provider<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">JsonRpcProvider</span><span class="tsd-signature-symbol">; </span>to<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/converter.ts#L8">lib/converter.ts:8</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Options for <a href="globals.html#convert">convert</a></p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> amount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The amount of the <code>from</code> asset to convert</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> endpoint<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The JSON RPC endpoint (either this or the <code>provider</code> must be provided)</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> feeds<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">readonly </span><a href="globals.html#feed" class="tsd-signature-type">Feed</a><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Optionally pass in a custom array of price feeds</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> from<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The asset to convert from</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> provider<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">JsonRpcProvider</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The JsonRpcProvider (either this or the <code>endpoint</code> must be provided)</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> to<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The asset to convert to</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="feed" class="tsd-anchor"></a>
+					<h3>Feed</h3>
+					<div class="tsd-signature tsd-kind-icon">Feed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>address<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>decimals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>from<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>to<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/priceFeeds.ts#L1">lib/priceFeeds.ts:1</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> address<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> decimals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> from<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> to<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="path" class="tsd-anchor"></a>
+					<h3>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">readonly </span><a href="globals.html#pathsection" class="tsd-signature-type">PathSection</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/shortestPath.ts#L3">lib/shortestPath.ts:3</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="pathsection" class="tsd-anchor"></a>
+					<h3>Path<wbr>Section</h3>
+					<div class="tsd-signature tsd-kind-icon">Path<wbr>Section<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>feedId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>inverse<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/shortestPath.ts#L5">lib/shortestPath.ts:5</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> feed<wbr>Id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> inverse<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="btc_eth_aggregator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> BTC_<wbr>ETH_<wbr>AGGREGATOR</h3>
+					<div class="tsd-signature tsd-kind-icon">BTC_<wbr>ETH_<wbr>AGGREGATOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"0xdeb288F737066589598e9214E782fa5A8eD689e8"</span><span class="tsd-signature-symbol"> = &quot;0xdeb288F737066589598e9214E782fa5A8eD689e8&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/priceFeeds.ts#L12">lib/priceFeeds.ts:12</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="btc_usd_aggregator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> BTC_<wbr>USD_<wbr>AGGREGATOR</h3>
+					<div class="tsd-signature tsd-kind-icon">BTC_<wbr>USD_<wbr>AGGREGATOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"</span><span class="tsd-signature-symbol"> = &quot;0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/priceFeeds.ts#L10">lib/priceFeeds.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="eth_usd_aggregator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> ETH_<wbr>USD_<wbr>AGGREGATOR</h3>
+					<div class="tsd-signature tsd-kind-icon">ETH_<wbr>USD_<wbr>AGGREGATOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"</span><span class="tsd-signature-symbol"> = &quot;0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/priceFeeds.ts#L9">lib/priceFeeds.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="link_eth_aggregator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> LINK_<wbr>ETH_<wbr>AGGREGATOR</h3>
+					<div class="tsd-signature tsd-kind-icon">LINK_<wbr>ETH_<wbr>AGGREGATOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"0xDC530D9457755926550b59e8ECcdaE7624181557"</span><span class="tsd-signature-symbol"> = &quot;0xDC530D9457755926550b59e8ECcdaE7624181557&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/priceFeeds.ts#L13">lib/priceFeeds.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="link_usd_aggregator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> LINK_<wbr>USD_<wbr>AGGREGATOR</h3>
+					<div class="tsd-signature tsd-kind-icon">LINK_<wbr>USD_<wbr>AGGREGATOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"0x2c1d072e956AFFC0D435Cb7AC38EF18d24d9127c"</span><span class="tsd-signature-symbol"> = &quot;0x2c1d072e956AFFC0D435Cb7AC38EF18d24d9127c&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/priceFeeds.ts#L11">lib/priceFeeds.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="mainnetpricefeeds" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> mainnet<wbr>Price<wbr>Feeds</h3>
+					<div class="tsd-signature tsd-kind-icon">mainnet<wbr>Price<wbr>Feeds<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">readonly </span><a href="globals.html#feed" class="tsd-signature-type">Feed</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{id: 0,from: &#x27;ETH&#x27;,to: &#x27;USD&#x27;,address: ETH_USD_AGGREGATOR,decimals: 8,},{id: 1,from: &#x27;BTC&#x27;,to: &#x27;USD&#x27;,address: BTC_USD_AGGREGATOR,decimals: 8,},{id: 2,from: &#x27;LINK&#x27;,to: &#x27;USD&#x27;,address: LINK_USD_AGGREGATOR,decimals: 8,},{id: 3,from: &#x27;BTC&#x27;,to: &#x27;ETH&#x27;,address: BTC_ETH_AGGREGATOR,decimals: 18,},{id: 4,from: &#x27;LINK&#x27;,to: &#x27;ETH&#x27;,address: LINK_ETH_AGGREGATOR,decimals: 18,},]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/priceFeeds.ts#L15">lib/priceFeeds.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="supportedassets" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> supported<wbr>Assets</h3>
+					<div class="tsd-signature tsd-kind-icon">supported<wbr>Assets<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{code: &#x27;USD&#x27;,},{code: &#x27;ETH&#x27;,},{code: &#x27;BTC&#x27;,},{code: &#x27;LINK&#x27;,},]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/assets.ts#L1">lib/assets.ts:1</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="convert" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> convert</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">convert<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="globals.html#convertprops" class="tsd-signature-type">ConvertProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/converter.ts#L52">lib/converter.ts:52</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert a known amount in one asset to some amount of another asset.</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-typescript"><span class="hljs-keyword">await</span> convert({
+ <span class="hljs-attr">amount</span>: <span class="hljs-number">5</span>,
+ <span class="hljs-attr">from</span>: <span class="hljs-string">&#x27;ETH&#x27;</span>,
+ <span class="hljs-attr">to</span>: <span class="hljs-string">&#x27;BTC&#x27;</span>,
+ <span class="hljs-attr">endpoint</span>: <span class="hljs-string">&#x27;https://mainnet.infura.io/v3/ab01ab01ab01ab01ab01ab01&#x27;</span>
+});
+<span class="hljs-comment">// =&gt; 0.2</span></code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="globals.html#convertprops" class="tsd-signature-type">ConvertProps</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The resulting amount of the <code>to</code> asset after conversion</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="createprovider" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> create<wbr>Provider</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Provider<span class="tsd-signature-symbol">(</span>endpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">JsonRpcProvider</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/converter.ts#L127">lib/converter.ts:127</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>endpoint: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Your Ethereum JSON-RPC endpoint</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">JsonRpcProvider</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="getshortestpath" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Shortest<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Shortest<wbr>Path<span class="tsd-signature-symbol">(</span>fromAsset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, toAsset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, feeds<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">readonly </span><a href="globals.html#feed" class="tsd-signature-type">Feed</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#path" class="tsd-signature-type">Path</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/PickleyD/chainlink-asset-converter/blob/9d8cb70/src/lib/shortestPath.ts#L52">lib/shortestPath.ts:52</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>By modelling a tree where all the assets are our vertices and all the price feeds
+										are our path sections between those vertices, we can recursively traverse through to find the
+									shortest path between our origin asset and the destination asset.</p>
+								</div>
+								<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+									<h3>Example</h3>
+								</a>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> feeds: <span class="hljs-keyword">readonly</span> Feed[] = [
+  {
+    <span class="hljs-attr">id</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">from</span>: <span class="hljs-string">&#x27;ETH&#x27;</span>,
+    <span class="hljs-attr">to</span>: <span class="hljs-string">&#x27;USD&#x27;</span>,
+    <span class="hljs-attr">address</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+    <span class="hljs-attr">decimals</span>: <span class="hljs-number">1</span>,
+  },
+  {
+    <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">from</span>: <span class="hljs-string">&#x27;BTC&#x27;</span>,
+    <span class="hljs-attr">to</span>: <span class="hljs-string">&#x27;USD&#x27;</span>,
+    <span class="hljs-attr">address</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+    <span class="hljs-attr">decimals</span>: <span class="hljs-number">1</span>,
+  }
+];
+
+getShortestPath(<span class="hljs-string">&#x27;ETH&#x27;</span>, <span class="hljs-string">&#x27;BTC&#x27;</span>, feeds);
+<span class="hljs-comment">// =&gt; [</span>
+<span class="hljs-comment">//   {</span>
+<span class="hljs-comment">//     feedId: 0,</span>
+<span class="hljs-comment">//     inverse: false,</span>
+<span class="hljs-comment">//   },</span>
+<span class="hljs-comment">//   {</span>
+<span class="hljs-comment">//     feedId: 1,</span>
+<span class="hljs-comment">//     inverse: true,</span>
+<span class="hljs-comment">//   },</span>
+<span class="hljs-comment">// ];</span></code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fromAsset: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The asset vertex to begin pathing from for this iteration</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>toAsset: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The destination asset vertex (the asset we ultimately wish to convert to)</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> feeds: <span class="tsd-signature-symbol">readonly </span><a href="globals.html#feed" class="tsd-signature-type">Feed</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = mainnetPriceFeeds</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The feeds representing the paths between all vertices</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="globals.html#path" class="tsd-signature-type">Path</a></h4>
+							<p><a href="globals.html#path"><code>Path</code></a> representing the shortest path between our origin and destination asset vertices</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals current ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#convertprops" class="tsd-kind-icon">Convert<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#feed" class="tsd-kind-icon">Feed</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#path" class="tsd-kind-icon">Path</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#pathsection" class="tsd-kind-icon">Path<wbr>Section</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#btc_eth_aggregator" class="tsd-kind-icon">BTC_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#btc_usd_aggregator" class="tsd-kind-icon">BTC_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#eth_usd_aggregator" class="tsd-kind-icon">ETH_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#link_eth_aggregator" class="tsd-kind-icon">LINK_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#link_usd_aggregator" class="tsd-kind-icon">LINK_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mainnetpricefeeds" class="tsd-kind-icon">mainnet<wbr>Price<wbr>Feeds</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#supportedassets" class="tsd-kind-icon">supported<wbr>Assets</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#convert" class="tsd-kind-icon">convert</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#createprovider" class="tsd-kind-icon">create<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getshortestpath" class="tsd-kind-icon">get<wbr>Shortest<wbr>Path</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
