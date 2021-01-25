@@ -9,9 +9,12 @@ await convert({
   amount: 5,
   from: 'ETH',
   to: 'BTC',
+  // Your Ethereum JSON-RPC endpoint*
   endpoint: 'https://mainnet.infura.io/v3/ab01ab01ab01ab01ab01ab01',
 });
 // => '0.2'
 ```
+
+\*you could get your own one of these with a free-tier account at [Infura](https://infura.io) for example
 
 ## [Demo](https://goofy-goldwasser-5c3f60.netlify.app/) // [Docs](https://pickleyd.github.io/chainlink-asset-converter/)
