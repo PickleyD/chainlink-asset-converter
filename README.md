@@ -1,6 +1,6 @@
 # chainlink-asset-converter
 
-## Super easy conversion between any of the assets currently supported by [Chainlink's price feeds network](https://data.chain.link/)
+### Super easy conversion between any of the assets currently supported by [Chainlink's price feeds network](https://data.chain.link/)
 
 ```typescript
 await convert({
