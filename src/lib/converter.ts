@@ -43,7 +43,7 @@ export type ConvertProps = {
  *  to: 'BTC',
  *  endpoint: 'https://mainnet.infura.io/v3/ab01ab01ab01ab01ab01ab01'
  * });
- * // => 0.2
+ * // => '0.2'
  * ```
  *
  * @param {ConvertProps} options
