@@ -39,13 +39,13 @@ export const mainnetPriceFeeds: readonly Feed[] = [
     from: 'BTC',
     to: 'ETH',
     address: BTC_ETH_AGGREGATOR,
-    decimals: 8,
+    decimals: 18,
   },
   {
     id: 4,
     from: 'LINK',
     to: 'ETH',
     address: LINK_ETH_AGGREGATOR,
-    decimals: 8,
+    decimals: 18,
   },
 ];

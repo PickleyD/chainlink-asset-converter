@@ -7,15 +7,15 @@ import { getShortestPath, Path, PathSection } from './shortestPath';
 /** Options for {@link convert} */
 export type ConvertProps = {
   /**
-   * The amount of the `from` currency to convert
+   * The amount of the `from` asset to convert
    */
   readonly amount: number;
   /**
-   * The currency to convert from
+   * The asset to convert from
    */
   readonly from: string;
   /**
-   * The currency to convert to
+   * The asset to convert to
    */
   readonly to: string;
   /**
@@ -33,7 +33,7 @@ export type ConvertProps = {
 };
 
 /**
- * Convert a known amount in one currency to some amount of another currency.
+ * Convert a known amount in one asset to some amount of another asset.
  *
  * ### Example
  * ``` typescript
@@ -47,9 +47,9 @@ export type ConvertProps = {
  * ```
  *
  * @param {ConvertProps} options
- * @returns The resulting amount of the `to` currency after conversion
+ * @returns The resulting amount of the `to` asset after conversion
  */
-export const convert = async (options: ConvertProps) => {
+export const convert = async (options: ConvertProps): Promise<string> => {
   const {
     amount = 0,
     from,
@@ -59,7 +59,7 @@ export const convert = async (options: ConvertProps) => {
     feeds = mainnetPriceFeeds,
   } = options;
 
-  if (amount === 0) return 0;
+  if (amount === 0) return '0';
 
   if (provider == null && endpoint == '') {
     return Promise.reject(
@@ -78,7 +78,7 @@ export const convert = async (options: ConvertProps) => {
 
   const shortestPath: Path = getShortestPath(from, to, feeds);
 
-  if (shortestPath.length === 0) return amount;
+  if (shortestPath.length === 0) return amount.toString();
 
   const getLatestAnswerPromises = shortestPath.map(
     (pathSection: PathSection) => {
@@ -106,9 +106,11 @@ export const convert = async (options: ConvertProps) => {
       const { decimals } = feeds.find((feed: Feed) => feed.id === feedId);
 
       const { answer } = latestAnswers[index];
-      const exchangeRate = new BigNumber(answer).dividedBy(
+
+      const exchangeRate = new BigNumber(answer.toNumber()).dividedBy(
         new BigNumber(10).exponentiatedBy(decimals)
       );
+
       return inverse
         ? new BigNumber(1).dividedBy(exchangeRate).multipliedBy(_newAmount)
         : exchangeRate.multipliedBy(_newAmount);
@@ -116,7 +118,7 @@ export const convert = async (options: ConvertProps) => {
     new BigNumber(amount)
   );
 
-  return result.toNumber();
+  return result.toString();
 };
 
 /**

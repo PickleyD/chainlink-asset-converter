@@ -8,9 +8,9 @@ export type PathSection = {
 };
 
 /**
- * By modelling a tree where all the currencies are our vertices and all the price feeds
+ * By modelling a tree where all the assets are our vertices and all the price feeds
  * are our path sections between those vertices, we can recursively traverse through to find the
- * shortest path between our origin currency and the destination currency.
+ * shortest path between our origin asset and the destination asset.
  *
  * ### Example
  * ``` typescript
@@ -44,41 +44,41 @@ export type PathSection = {
  * // ];
  * ```
  *
- * @param fromCurrency The currency vertex to begin pathing from for this iteration
- * @param toCurrency The destination currency vertex (the currency we ultimately wish to convert to)
+ * @param fromAsset The asset vertex to begin pathing from for this iteration
+ * @param toAsset The destination asset vertex (the asset we ultimately wish to convert to)
  * @param feeds The feeds representing the paths between all vertices
- * @returns [[`Path`]] representing the shortest path between our origin and destination currency vertices
+ * @returns [[`Path`]] representing the shortest path between our origin and destination asset vertices
  */
 export const getShortestPath = (
-  fromCurrency: string,
-  toCurrency: string,
+  fromAsset: string,
+  toAsset: string,
   feeds: readonly Feed[] = mainnetPriceFeeds
-): Path => getShortestPathRecursively(fromCurrency, toCurrency, feeds);
+): Path => getShortestPathRecursively(fromAsset, toAsset, feeds);
 
 /**
  * @ignore
- * By modelling a tree where all the currencies are our vertices and all the price feeds
+ * By modelling a tree where all the assets are our vertices and all the price feeds
  * are our paths between those vertices, we can recursively traverse through to find the
- * shortest path between our origin currency and the destination currency.
- * @param fromCurrency The currency vertex to begin pathing from for this iteration
- * @param toCurrency The destination currency vertex (the currency we ultimately wish to convert to)
+ * shortest path between our origin asset and the destination asset.
+ * @param fromAsset The asset vertex to begin pathing from for this iteration
+ * @param toAsset The destination asset vertex (the asset we ultimately wish to convert to)
  * @param feeds The feeds representing the paths between all vertices
  * @param currentPathArray An array of the [[`PathSection`]]s taken to reach this vertex
- * @returns [[`Path`]] representing the shortest path between our origin and destination currency vertices
+ * @returns [[`Path`]] representing the shortest path between our origin and destination asset vertices
  */
 const getShortestPathRecursively = (
-  fromCurrency: string,
-  toCurrency: string,
+  fromAsset: string,
+  toAsset: string,
   feeds: readonly Feed[],
   currentPathSectionArray: readonly PathSection[] = []
 ): Path => {
-  // Find all feeds containing our 'fromCurrency' in their 'from' prop
-  const matchingFromFeeds = getFeedsWhereFromMatches(fromCurrency, feeds);
+  // Find all feeds containing our 'fromAsset' in their 'from' prop
+  const matchingFromFeeds = getFeedsWhereFromMatches(fromAsset, feeds);
 
-  // Find all feeds containing our 'fromCurrency' in their 'to' prop
-  const matchingToFeeds = getFeedsWhereToMatches(fromCurrency, feeds);
+  // Find all feeds containing our 'fromAsset' in their 'to' prop
+  const matchingToFeeds = getFeedsWhereToMatches(fromAsset, feeds);
 
-  // No feed contains our 'fromCurrency' so return empty array
+  // No feed contains our 'fromAsset' so return empty array
   if (matchingFromFeeds.length === 0 && matchingToFeeds.length === 0) return [];
 
   const pathSectionsToTraverse: readonly PathSection[] = [
@@ -94,7 +94,7 @@ const getShortestPathRecursively = (
 
   const matches = pathSectionsToTraverse.filter(
     (pathSection: PathSection) =>
-      getCurrencyOnOtherSideOfPathSection(pathSection, feeds) === toCurrency
+      getAssetOnOtherSideOfPathSection(pathSection, feeds) === toAsset
   );
 
   // Return match
@@ -112,16 +112,14 @@ const getShortestPathRecursively = (
     );
 
     return pathSectionsToTraverse.map((pathSection: PathSection) => {
-      const nextFromCurrency = getCurrencyOnOtherSideOfPathSection(
+      const nextFromAsset = getAssetOnOtherSideOfPathSection(
         pathSection,
         feeds
       );
-      return getShortestPathRecursively(
-        nextFromCurrency,
-        toCurrency,
-        newFeeds,
-        [...currentPathSectionArray, pathSection]
-      );
+      return getShortestPathRecursively(nextFromAsset, toAsset, newFeeds, [
+        ...currentPathSectionArray,
+        pathSection,
+      ]);
     })[0];
   }
 };
@@ -136,26 +134,26 @@ const getFeedById = (id: number, feeds: readonly Feed[]) =>
 
 /**
  * @ignore
- * @param currency
+ * @param asset
  * @param feeds
  */
-const getFeedsWhereFromMatches = (currency: string, feeds: readonly Feed[]) =>
-  feeds.filter((feed: Feed) => feed.from === currency);
+const getFeedsWhereFromMatches = (asset: string, feeds: readonly Feed[]) =>
+  feeds.filter((feed: Feed) => feed.from === asset);
 
 /**
  * @ignore
- * @param currency
+ * @param asset
  * @param feeds
  */
-const getFeedsWhereToMatches = (currency: string, feeds: readonly Feed[]) =>
-  feeds.filter((feed: Feed) => feed.to === currency);
+const getFeedsWhereToMatches = (asset: string, feeds: readonly Feed[]) =>
+  feeds.filter((feed: Feed) => feed.to === asset);
 
 /**
  * @ignore
  * @param pathSection
  * @param feeds
  */
-const getCurrencyOnOtherSideOfPathSection = (
+const getAssetOnOtherSideOfPathSection = (
   pathSection: PathSection,
   feeds: readonly Feed[]
 ) => {

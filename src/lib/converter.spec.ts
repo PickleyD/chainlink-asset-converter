@@ -1,5 +1,5 @@
 import test from 'ava';
-import { ethers } from 'ethers';
+import { BigNumber, ethers } from 'ethers';
 import sinon from 'sinon';
 
 import { convert } from './converter';
@@ -41,7 +41,7 @@ test.before(() => {
     .withArgs('0xAB', sinon.match.any, sinon.match.any)
     .returns({
       latestRoundData: () => ({
-        answer: 10_000_000_000,
+        answer: BigNumber.from(10_000_000_000),
       }),
     });
 
@@ -49,7 +49,7 @@ test.before(() => {
     .withArgs('0xBC', sinon.match.any, sinon.match.any)
     .returns({
       latestRoundData: () => ({
-        answer: 20_000_000,
+        answer: BigNumber.from(20_000_000),
       }),
     });
 
@@ -57,7 +57,7 @@ test.before(() => {
     .withArgs('0xCD', sinon.match.any, sinon.match.any)
     .returns({
       latestRoundData: () => ({
-        answer: 100_000,
+        answer: BigNumber.from(100_000),
       }),
     });
 
@@ -66,6 +66,20 @@ test.before(() => {
 
 test.after.always(() => {
   sinon.restore();
+});
+
+test('0Anything to 0Unknown', async (t) => {
+  const provider = sinon.fake();
+
+  const result = await convert({
+    amount: 0,
+    from: 'Anything',
+    to: 'Unknown',
+    provider,
+    feeds: testFeedsA,
+  });
+
+  t.deepEqual(result, '0');
 });
 
 test('5A to 5A', async (t) => {
@@ -79,7 +93,7 @@ test('5A to 5A', async (t) => {
     feeds: testFeedsA,
   });
 
-  t.deepEqual(result, 5);
+  t.deepEqual(result, '5');
 });
 
 test('5A to 500B', async (t) => {
@@ -93,7 +107,7 @@ test('5A to 500B', async (t) => {
     feeds: testFeedsA,
   });
 
-  t.deepEqual(result, 500);
+  t.deepEqual(result, '500');
 });
 
 test('5A to 100C', async (t) => {
@@ -107,7 +121,7 @@ test('5A to 100C', async (t) => {
     feeds: testFeedsA,
   });
 
-  t.deepEqual(result, 100);
+  t.deepEqual(result, '100');
 });
 
 test('5A to .1D', async (t) => {
@@ -121,7 +135,7 @@ test('5A to .1D', async (t) => {
     feeds: testFeedsA,
   });
 
-  t.deepEqual(result, 0.1);
+  t.deepEqual(result, '0.1');
 });
 
 test('5D to 250A', async (t) => {
@@ -135,7 +149,7 @@ test('5D to 250A', async (t) => {
     feeds: testFeedsA,
   });
 
-  t.deepEqual(result, 250);
+  t.deepEqual(result, '250');
 });
 
 test('.001C to .000001D', async (t) => {
@@ -149,7 +163,7 @@ test('.001C to .000001D', async (t) => {
     feeds: testFeedsA,
   });
 
-  t.deepEqual(result, 0.000_001);
+  t.deepEqual(result, '0.000001');
 });
 
 test('1000000A to 100000000B', async (t) => {
@@ -163,7 +177,7 @@ test('1000000A to 100000000B', async (t) => {
     feeds: testFeedsA,
   });
 
-  t.deepEqual(result, 100_000_000);
+  t.deepEqual(result, '100000000');
 });
 
 test('No endpoint + no provider', async (t) => {
@@ -191,5 +205,5 @@ test('No provider, only endpoint', async (t) => {
     endpoint: 'http://localhost:test',
   });
 
-  t.deepEqual(result, 1);
+  t.deepEqual(result, '1');
 });
