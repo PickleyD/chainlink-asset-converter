@@ -14,4 +14,4 @@ await convert({
 // => '0.2'
 ```
 
-Check out the [docs](https://pickleyd.github.io/chainlink-asset-converter/)!
+## [Demo](https://goofy-goldwasser-5c3f60.netlify.app/) // [Docs](https://pickleyd.github.io/chainlink-asset-converter/)
