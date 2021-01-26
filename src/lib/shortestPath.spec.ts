@@ -25,6 +25,27 @@ const testFeedsA: readonly Feed[] = [
     address: '',
     decimals: 1,
   },
+  {
+    id: 3,
+    from: 'D',
+    to: 'E',
+    address: '',
+    decimals: 1,
+  },
+  {
+    id: 4,
+    from: 'E',
+    to: 'F',
+    address: '',
+    decimals: 1,
+  },
+  {
+    id: 5,
+    from: 'B',
+    to: 'F',
+    address: '',
+    decimals: 1,
+  },
 ];
 
 const shortestPathFromAToB: Path = [
@@ -70,4 +91,38 @@ const shortestPathFromAToD: Path = [
 
 test('shortestPathAToD', (t) => {
   t.deepEqual(getShortestPath('A', 'D', testFeedsA), shortestPathFromAToD);
+});
+
+const shortestPathFromDToA: Path = [
+  {
+    feedId: 2,
+    inverse: true,
+  },
+  {
+    feedId: 1,
+    inverse: true,
+  },
+  {
+    feedId: 0,
+    inverse: true,
+  },
+];
+
+test('shortestPathDToA', (t) => {
+  t.deepEqual(getShortestPath('D', 'A', testFeedsA), shortestPathFromDToA);
+});
+
+const shortestPathFromEToB: Path = [
+  {
+    feedId: 4,
+    inverse: false,
+  },
+  {
+    feedId: 5,
+    inverse: true,
+  },
+];
+
+test('shortestPathEToB', (t) => {
+  t.deepEqual(getShortestPath('E', 'B', testFeedsA), shortestPathFromEToB);
 });

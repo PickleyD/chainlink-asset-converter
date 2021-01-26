@@ -27,6 +27,20 @@ const testFeedsA: readonly Feed[] = [
     address: '0xCD',
     decimals: 8,
   },
+  {
+    id: 3,
+    from: 'D',
+    to: 'E',
+    address: '0xDE',
+    decimals: 18,
+  },
+  {
+    id: 4,
+    from: 'E',
+    to: 'F',
+    address: '0xEF',
+    decimals: 18,
+  },
 ];
 
 /**
@@ -34,6 +48,8 @@ const testFeedsA: readonly Feed[] = [
  *   A/B: 100
  *   B/C: 0.2
  *   C/D: 0.001
+ *   D/E: 999_999_999_999_999_999
+ *   E/F: 0.000_000_000_000_000_001
  */
 test.before(() => {
   const contractConstructorStub = sinon.stub();
@@ -58,6 +74,22 @@ test.before(() => {
     .returns({
       latestRoundData: () => ({
         answer: BigNumber.from(100_000),
+      }),
+    });
+
+  contractConstructorStub
+    .withArgs('0xDE', sinon.match.any, sinon.match.any)
+    .returns({
+      latestRoundData: () => ({
+        answer: BigNumber.from('999999999999999999000000000000000000'),
+      }),
+    });
+
+  contractConstructorStub
+    .withArgs('0xEF', sinon.match.any, sinon.match.any)
+    .returns({
+      latestRoundData: () => ({
+        answer: BigNumber.from(1),
       }),
     });
 
@@ -178,6 +210,20 @@ test('1000000A to 100000000B', async (t) => {
   });
 
   t.deepEqual(result, '100000000');
+});
+
+test('1D to .999999999999999999F', async (t) => {
+  const provider = sinon.fake();
+
+  const result = await convert({
+    amount: 1,
+    from: 'D',
+    to: 'F',
+    provider,
+    feeds: testFeedsA,
+  });
+
+  t.deepEqual(result, '0.999999999999999999');
 });
 
 test('No endpoint + no provider', async (t) => {

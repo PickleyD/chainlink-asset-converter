@@ -79,7 +79,9 @@ const getShortestPathRecursively = (
   const matchingToFeeds = getFeedsWhereToMatches(fromAsset, feeds);
 
   // No feed contains our 'fromAsset' so return empty array
-  if (matchingFromFeeds.length === 0 && matchingToFeeds.length === 0) return [];
+  if (matchingFromFeeds.length === 0 && matchingToFeeds.length === 0) {
+    return [];
+  }
 
   const pathSectionsToTraverse: readonly PathSection[] = [
     ...matchingFromFeeds.map((feed: Feed) => ({
@@ -111,16 +113,27 @@ const getShortestPathRecursively = (
       (feed: Feed) => !traversedFeedIdsThisRound.includes(feed.id)
     );
 
-    return pathSectionsToTraverse.map((pathSection: PathSection) => {
-      const nextFromAsset = getAssetOnOtherSideOfPathSection(
-        pathSection,
-        feeds
-      );
-      return getShortestPathRecursively(nextFromAsset, toAsset, newFeeds, [
-        ...currentPathSectionArray,
-        pathSection,
-      ]);
-    })[0];
+    return (
+      pathSectionsToTraverse
+        .map((pathSection: PathSection) => {
+          const nextFromAsset = getAssetOnOtherSideOfPathSection(
+            pathSection,
+            feeds
+          );
+          return getShortestPathRecursively(nextFromAsset, toAsset, newFeeds, [
+            ...currentPathSectionArray,
+            pathSection,
+          ]);
+        })
+        // Filter out any empty paths
+        .filter((path: Path) => path && path.length > 0)
+        // Take the shortest path
+        .reduce((previous, current) => {
+          return previous.length > current.length || previous.length === 0
+            ? current
+            : previous;
+        }, [])
+    );
   }
 };
 

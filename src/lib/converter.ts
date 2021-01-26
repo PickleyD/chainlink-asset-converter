@@ -106,8 +106,7 @@ export const convert = async (options: ConvertProps): Promise<string> => {
       const { decimals } = feeds.find((feed: Feed) => feed.id === feedId);
 
       const { answer } = latestAnswers[index];
-
-      const exchangeRate = new BigNumber(answer.toNumber()).dividedBy(
+      const exchangeRate = new BigNumber(answer.toString()).dividedBy(
         new BigNumber(10).exponentiatedBy(decimals)
       );
 
