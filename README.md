@@ -17,4 +17,4 @@ await convert({
 
 \*you could get your own one of these with a free-tier account at [Infura](https://infura.io) for example
 
-## [Demo](https://goofy-goldwasser-5c3f60.netlify.app/) // [Docs](https://pickleyd.github.io/chainlink-asset-converter/)
+## [Demo](https://convert.link) // [Docs](https://pickleyd.github.io/chainlink-asset-converter/)
