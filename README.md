@@ -1,5 +1,7 @@
 # chainlink-asset-converter
 
+![Logo](logo.png?raw=true "chainlink-asset-converter")
+
 ### Super easy conversion between any of the assets currently supported by [Chainlink's price feeds network](https://data.chain.link/)
 
 ```typescript
