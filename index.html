@@ -67,7 +67,23 @@
 				<a href="#chainlink-asset-converter" id="chainlink-asset-converter" style="color: inherit; text-decoration: none;">
 					<h1>chainlink-asset-converter</h1>
 				</a>
-				<p>description</p>
+				<a href="#super-easy-conversion-between-any-of-the-assets-currently-supported-by-chainlink39s-price-feeds-network" id="super-easy-conversion-between-any-of-the-assets-currently-supported-by-chainlink39s-price-feeds-network" style="color: inherit; text-decoration: none;">
+					<h3>Super easy conversion between any of the assets currently supported by <a href="https://data.chain.link/">Chainlink&#39;s price feeds network</a></h3>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { convert } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;chainlink-asset-converter&#x27;</span>;
+
+<span class="hljs-keyword">await</span> convert({
+  <span class="hljs-attr">amount</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">from</span>: <span class="hljs-string">&#x27;ETH&#x27;</span>,
+  <span class="hljs-attr">to</span>: <span class="hljs-string">&#x27;BTC&#x27;</span>,
+  <span class="hljs-comment">// Your Ethereum JSON-RPC endpoint*</span>
+  <span class="hljs-attr">endpoint</span>: <span class="hljs-string">&#x27;https://mainnet.infura.io/v3/ab01ab01ab01ab01ab01ab01&#x27;</span>,
+});
+<span class="hljs-comment">// =&gt; &#x27;0.2&#x27;</span></code></pre>
+				<p>*you could get your own one of these with a free-tier account at <a href="https://infura.io">Infura</a> for example</p>
+				<a href="#demo--docs" id="demo--docs" style="color: inherit; text-decoration: none;">
+					<h2><a href="https://convert.link">Demo</a> // <a href="https://pickleyd.github.io/chainlink-asset-converter/">Docs</a></h2>
+				</a>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -93,19 +109,220 @@
 						<a href="globals.html#pathsection" class="tsd-kind-icon">Path<wbr>Section</a>
 					</li>
 					<li class=" tsd-kind-variable">
+						<a href="globals.html#aave_eth_aggregator" class="tsd-kind-icon">AAVE_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#aave_usd_aggregator" class="tsd-kind-icon">AAVE_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#ada_usd_aggregator" class="tsd-kind-icon">ADA_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#adx_usd_aggregator" class="tsd-kind-icon">ADX_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#aud_usd_aggregator" class="tsd-kind-icon">AUD_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#bat_eth_aggregator" class="tsd-kind-icon">BAT_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#bch_usd_aggregator" class="tsd-kind-icon">BCH_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#bnb_usd_aggregator" class="tsd-kind-icon">BNB_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#bnt_eth_aggregator" class="tsd-kind-icon">BNT_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#bnt_usd_aggregator" class="tsd-kind-icon">BNT_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#brent_usd_aggregator" class="tsd-kind-icon">BRENT_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
 						<a href="globals.html#btc_eth_aggregator" class="tsd-kind-icon">BTC_<wbr>ETH_<wbr>AGGREGATOR</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#btc_usd_aggregator" class="tsd-kind-icon">BTC_<wbr>USD_<wbr>AGGREGATOR</a>
 					</li>
 					<li class=" tsd-kind-variable">
+						<a href="globals.html#busd_eth_aggregator" class="tsd-kind-icon">BUSD_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#bzrx_eth_aggregator" class="tsd-kind-icon">BZRX_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#chf_usd_aggregator" class="tsd-kind-icon">CHF_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#comp_usd_aggregator" class="tsd-kind-icon">COMP_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#cro_eth_aggregator" class="tsd-kind-icon">CRO_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#crv_eth_aggregator" class="tsd-kind-icon">CRV_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#dai_eth_aggregator" class="tsd-kind-icon">DAI_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#dai_usd_aggregator" class="tsd-kind-icon">DAI_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#dash_usd_aggregator" class="tsd-kind-icon">DASH_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#dmg_eth_aggregator" class="tsd-kind-icon">DMG_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#dot_usd_aggregator" class="tsd-kind-icon">DOT_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#enj_eth_aggregator" class="tsd-kind-icon">ENJ_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#eos_usd_aggregator" class="tsd-kind-icon">EOS_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#etc_usd_aggregator" class="tsd-kind-icon">ETC_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
 						<a href="globals.html#eth_usd_aggregator" class="tsd-kind-icon">ETH_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#eth_xdr_aggregator" class="tsd-kind-icon">ETH_<wbr>XDR_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#eur_usd_aggregator" class="tsd-kind-icon">EUR_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fil_usd_aggregator" class="tsd-kind-icon">FIL_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#fnx_usd_aggregator" class="tsd-kind-icon">FNX_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#ftse_gbp_aggregator" class="tsd-kind-icon">FTSE_<wbr>GBP_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#gbp_usd_aggregator" class="tsd-kind-icon">GBP_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#jpy_usd_aggregator" class="tsd-kind-icon">JPY_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#knc_eth_aggregator" class="tsd-kind-icon">KNC_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#knc_usd_aggregator" class="tsd-kind-icon">KNC_<wbr>USD_<wbr>AGGREGATOR</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#link_eth_aggregator" class="tsd-kind-icon">LINK_<wbr>ETH_<wbr>AGGREGATOR</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#link_usd_aggregator" class="tsd-kind-icon">LINK_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#lrc_eth_aggregator" class="tsd-kind-icon">LRC_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#ltc_usd_aggregator" class="tsd-kind-icon">LTC_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mana_eth_aggregator" class="tsd-kind-icon">MANA_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mcap_usd_aggregator" class="tsd-kind-icon">MCAP_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mkr_eth_aggregator" class="tsd-kind-icon">MKR_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#n225_jpy_aggregator" class="tsd-kind-icon">N225_<wbr>JPY_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#oxt_usd_aggregator" class="tsd-kind-icon">OXT_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#pax_eth_aggregator" class="tsd-kind-icon">PAX_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#rcn_btc_aggregator" class="tsd-kind-icon">RCN_<wbr>BTC_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#ren_eth_aggregator" class="tsd-kind-icon">REN_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#ren_usd_aggregator" class="tsd-kind-icon">REN_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#rep_eth_aggregator" class="tsd-kind-icon">REP_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#scex_usd_aggregator" class="tsd-kind-icon">SCEX_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#sdefi_usd_aggregator" class="tsd-kind-icon">SDEFI_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#snx_eth_aggregator" class="tsd-kind-icon">SNX_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#snx_usd_aggregator" class="tsd-kind-icon">SNX_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#susd_eth_aggregator" class="tsd-kind-icon">SUSD_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#sxp_usd_aggregator" class="tsd-kind-icon">SXP_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#trx_usd_aggregator" class="tsd-kind-icon">TRX_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#tusd_eth_aggregator" class="tsd-kind-icon">TUSD_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#uni_eth_aggregator" class="tsd-kind-icon">UNI_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#uni_usd_aggregator" class="tsd-kind-icon">UNI_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#usdc_eth_aggregator" class="tsd-kind-icon">USDC_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#usdt_eth_aggregator" class="tsd-kind-icon">USDT_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#wom_eth_aggregator" class="tsd-kind-icon">WOM_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#xag_usd_aggregator" class="tsd-kind-icon">XAG_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#xau_usd_aggregator" class="tsd-kind-icon">XAU_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#xmr_usd_aggregator" class="tsd-kind-icon">XMR_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#xrp_usd_aggregator" class="tsd-kind-icon">XRP_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#xtz_usd_aggregator" class="tsd-kind-icon">XTZ_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#yfi_eth_aggregator" class="tsd-kind-icon">YFI_<wbr>ETH_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#yfi_usd_aggregator" class="tsd-kind-icon">YFI_<wbr>USD_<wbr>AGGREGATOR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#zrx_eth_aggregator" class="tsd-kind-icon">ZRX_<wbr>ETH_<wbr>AGGREGATOR</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#mainnetpricefeeds" class="tsd-kind-icon">mainnet<wbr>Price<wbr>Feeds</a>
