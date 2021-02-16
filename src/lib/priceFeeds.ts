@@ -650,7 +650,7 @@ export const mainnetPriceFeeds: readonly Feed[] = [
     from: 'DPI',
     to: 'USD',
     address: DPI_USD_AGGREGATOR,
-    decimals: 8,
+    decimals: 18,
   },
   {
     id: 77,
@@ -829,7 +829,7 @@ export const mainnetPriceFeeds: readonly Feed[] = [
   },
   {
     id: 102,
-    from: 'WOM',
+    from: 'WNXM',
     to: 'ETH',
     address: WNXM_ETH_AGGREGATOR,
     decimals: 18,

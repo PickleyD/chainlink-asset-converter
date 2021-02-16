@@ -258,9 +258,6 @@ export const supportedAssets = [
     code: 'ARS',
   },
   {
-    code: 'KP3R',
-  },
-  {
     code: 'CNY',
   },
   {
