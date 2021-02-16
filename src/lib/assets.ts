@@ -269,4 +269,16 @@ export const supportedAssets = [
   {
     code: 'XHV',
   },
+  {
+    code: '1INCH',
+  },
+  {
+    code: 'ANT',
+  },
+  {
+    code: 'AMPL',
+  },
+  {
+    code: 'BADGER',
+  },
 ];

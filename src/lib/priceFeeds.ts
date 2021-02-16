@@ -57,6 +57,7 @@ const HEGIC_USD_AGGREGATOR = '0xBFC189aC214E6A4a35EBC281ad15669619b75534';
 const IOST_USD_AGGREGATOR = '0xd0935838935349401c73a06FCde9d63f719e84E5';
 const TSLA_USD_AGGREGATOR = '0x1ceDaaB50936881B3e449e47e40A2cDAF5576A4a';
 const XHV_USD_AGGREGATOR = '0xeccBeEd9691d8521385259AE596CF00D68429de0';
+const AMPL_USD_AGGREGATOR = '0xe20CA8D7546932360e37E9D72c1a47334af57706';
 
 const DAI_ETH_AGGREGATOR = 'dai-eth.data.eth';
 const USDC_ETH_AGGREGATOR = 'usdc-eth.data.eth';
@@ -111,6 +112,10 @@ const USDK_ETH_AGGREGATOR = '0xfAC81Ea9Dd29D8E9b212acd6edBEb6dE38Cb43Af';
 const UST_ETH_AGGREGATOR = '0xa20623070413d42a5C01Db2c8111640DD7A5A03a';
 const WNXM_ETH_AGGREGATOR = '0xe5Dc0A609Ab8bCF15d3f35cFaa1Ff40f521173Ea';
 const YFII_ETH_AGGREGATOR = '0xaaB2f6b45B28E962B3aCd1ee4fC88aEdDf557756';
+const ONEINCH_ETH_AGGREGATOR = '0x72AFAECF99C9d9C8215fF44C77B94B99C28741e8';
+const AMPL_ETH_AGGREGATOR = '0x492575FDD11a0fCf2C6C719867890a7648d526eB';
+const ANT_ETH_AGGREGATOR = '0x8f83670260F8f7708143b836a2a6F11eF0aBac01';
+const BADGER_ETH_AGGREGATOR = '0x58921Ac140522867bf50b9E009599Da0CA4A2379';
 
 export const mainnetPriceFeeds: readonly Feed[] = [
   {
@@ -839,6 +844,41 @@ export const mainnetPriceFeeds: readonly Feed[] = [
     from: 'YFII',
     to: 'ETH',
     address: YFII_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 104,
+    from: '1INCH',
+    to: 'ETH',
+    address: ONEINCH_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 105,
+    from: 'AMPL',
+    to: 'ETH',
+    address: AMPL_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 106,
+    from: 'AMPL',
+    to: 'USD',
+    address: AMPL_USD_AGGREGATOR,
+    decimals: 8,
+  },
+  {
+    id: 107,
+    from: 'ANT',
+    to: 'ETH',
+    address: ANT_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 108,
+    from: 'BADGER',
+    to: 'ETH',
+    address: BADGER_ETH_AGGREGATOR,
     decimals: 18,
   },
 ];
