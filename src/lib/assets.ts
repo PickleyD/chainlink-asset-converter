@@ -188,4 +188,88 @@ export const supportedAssets = [
   {
     code: 'WOM',
   },
+  {
+    code: 'BAL',
+  },
+  {
+    code: 'BAND',
+  },
+  {
+    code: 'CEL',
+  },
+  {
+    code: 'COVER',
+  },
+  {
+    code: 'CREAM',
+  },
+  {
+    code: 'DPI',
+  },
+  {
+    code: 'FTT',
+  },
+  {
+    code: 'HEGIC',
+  },
+  {
+    code: 'KP3R',
+  },
+  {
+    code: 'MLN',
+  },
+  {
+    code: 'MTA',
+  },
+  {
+    code: 'NMR',
+  },
+  {
+    code: 'OMG',
+  },
+  {
+    code: 'RLC',
+  },
+  {
+    code: 'RUNE',
+  },
+  {
+    code: 'SRM',
+  },
+  {
+    code: 'SUSHI',
+  },
+  {
+    code: 'UMA',
+  },
+  {
+    code: 'USDK',
+  },
+  {
+    code: 'UST',
+  },
+  {
+    code: 'WNXM',
+  },
+  {
+    code: 'YFII',
+  },
+  {
+    code: 'ARS',
+  },
+  {
+    code: 'KP3R',
+  },
+  {
+    code: 'CNY',
+  },
+  {
+    code: 'IOST',
+  },
+  {
+    code: 'TSLA',
+  },
+  {
+    code: 'XHV',
+  },
 ];

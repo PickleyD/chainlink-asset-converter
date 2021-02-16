@@ -1,6 +1,6 @@
 {
   "name": "chainlink-asset-converter",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1",
   "description": "Asset conversion utils powered by Chainlink price feeds",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -42,6 +42,7 @@
     "node": ">=10"
   },
   "dependencies": {
+    "@ensdomains/ensjs": "^2.0.0",
     "bignumber.js": "^9.0.1",
     "ethers": "^5.0.19"
   },

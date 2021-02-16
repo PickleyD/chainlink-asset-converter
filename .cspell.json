@@ -24,7 +24,9 @@
         "exponentiated",
         "FTSE",
         "globby",
+        "HEGIC",
         "Infura",
+        "IOST",
         "libauth",
         "mainnet",
         "marketcap",
@@ -39,11 +41,15 @@
         "SUSD",
         "totalmarketcap",
         "transpiled",
+        "TSLA",
         "TUSD",
         "typedoc",
         "untracked",
         "USDC",
-        "USDT"
+        "USDK",
+        "USDT",
+        "WNXM",
+        "YFII"
     ],
     "flagWords": [],
     "ignorePaths": [

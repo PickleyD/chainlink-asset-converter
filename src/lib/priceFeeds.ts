@@ -48,6 +48,15 @@ const AAVE_USD_AGGREGATOR = 'aave-usd.data.eth';
 const FTSE_GBP_AGGREGATOR = 'ftse-gbp.data.eth';
 const CHF_USD_AGGREGATOR = 'chf-usd.data.eth';
 const ADA_USD_AGGREGATOR = 'ada-usd.data.eth';
+const BAND_USD_AGGREGATOR = '0x919C77ACc7373D000b329c1276C76586ed2Dd19F';
+const BTC_ARS_AGGREGATOR = '0xA912dd6b62B1C978e205B86994E057B1b494D73a';
+const CNY_USD_AGGREGATOR = '0xeF8A4aF35cd47424672E3C590aBD37FBB7A7759a';
+const COVER_USD_AGGREGATOR = '0x0ad50393F11FfAc4dd0fe5F1056448ecb75226Cf';
+const DPI_USD_AGGREGATOR = '0xD2A593BF7594aCE1faD597adb697b5645d5edDB2';
+const HEGIC_USD_AGGREGATOR = '0xBFC189aC214E6A4a35EBC281ad15669619b75534';
+const IOST_USD_AGGREGATOR = '0xd0935838935349401c73a06FCde9d63f719e84E5';
+const TSLA_USD_AGGREGATOR = '0x1ceDaaB50936881B3e449e47e40A2cDAF5576A4a';
+const XHV_USD_AGGREGATOR = '0xeccBeEd9691d8521385259AE596CF00D68429de0';
 
 const DAI_ETH_AGGREGATOR = 'dai-eth.data.eth';
 const USDC_ETH_AGGREGATOR = 'usdc-eth.data.eth';
@@ -79,6 +88,29 @@ const DMG_ETH_AGGREGATOR = 'dmg-eth.data.eth';
 const RCN_BTC_AGGREGATOR = 'rcn-btc.data.eth';
 const BZRX_ETH_AGGREGATOR = 'bzrx-eth.data.eth';
 const WOM_ETH_AGGREGATOR = 'wom-eth.data.eth';
+const BAL_ETH_AGGREGATOR = 'bal-eth.data.eth';
+const BAND_ETH_AGGREGATOR = '0x0BDb051e10c9718d1C29efbad442E88D38958274';
+const CEL_ETH_AGGREGATOR = '0x75FbD83b4bd51dEe765b2a01e8D3aa1B020F9d33';
+const COMP_ETH_AGGREGATOR = '0x1B39Ee86Ec5979ba5C322b826B3ECb8C79991699';
+const COVER_ETH_AGGREGATOR = '0x7B6230EF79D5E97C11049ab362c0b685faCBA0C2';
+const CREAM_ETH_AGGREGATOR = '0x82597CFE6af8baad7c0d441AA82cbC3b51759607';
+const DPI_ETH_AGGREGATOR = '0x029849bbc0b1d93b85a8b6190e979fd38F5760E2';
+const FTT_ETH_AGGREGATOR = '0xF0985f7E2CaBFf22CecC5a71282a89582c382EFE';
+const HEGIC_ETH_AGGREGATOR = '0xAf5E8D9Cd9fC85725A83BF23C52f1C39A71588a6';
+const KP3R_ETH_AGGREGATOR = '0xe7015CCb7E5F788B8c1010FC22343473EaaC3741';
+const MLN_ETH_AGGREGATOR = '0xDaeA8386611A157B08829ED4997A8A62B557014C';
+const MTA_ETH_AGGREGATOR = '0x98334b85De2A8b998Ba844c5521e73D68AD69C00';
+const NMR_ETH_AGGREGATOR = '0x9cB2A01A7E64992d32A34db7cEea4c919C391f6A';
+const OMG_ETH_AGGREGATOR = '0x57C9aB3e56EE4a83752c181f241120a3DBba06a1';
+const RLC_ETH_AGGREGATOR = '0x4cba1e1fdc738D0fe8DB3ee07728E2Bc4DA676c6';
+const RUNE_ETH_AGGREGATOR = '0x875D60C44cfbC38BaA4Eb2dDB76A767dEB91b97e';
+const SRM_ETH_AGGREGATOR = '0x050c048c9a0CD0e76f166E2539F87ef2acCEC58f';
+const SUSHI_ETH_AGGREGATOR = '0xe572CeF69f43c2E488b33924AF04BDacE19079cf';
+const UMA_ETH_AGGREGATOR = '0xf817B69EA583CAFF291E287CaE00Ea329d22765C';
+const USDK_ETH_AGGREGATOR = '0xfAC81Ea9Dd29D8E9b212acd6edBEb6dE38Cb43Af';
+const UST_ETH_AGGREGATOR = '0xa20623070413d42a5C01Db2c8111640DD7A5A03a';
+const WNXM_ETH_AGGREGATOR = '0xe5Dc0A609Ab8bCF15d3f35cFaa1Ff40f521173Ea';
+const YFII_ETH_AGGREGATOR = '0xaaB2f6b45B28E962B3aCd1ee4fC88aEdDf557756';
 
 export const mainnetPriceFeeds: readonly Feed[] = [
   {
@@ -583,6 +615,230 @@ export const mainnetPriceFeeds: readonly Feed[] = [
     from: 'WOM',
     to: 'ETH',
     address: WOM_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 72,
+    from: 'BAND',
+    to: 'USD',
+    address: BAND_USD_AGGREGATOR,
+    decimals: 8,
+  },
+  {
+    id: 73,
+    from: 'BTC',
+    to: 'ARS',
+    address: BTC_ARS_AGGREGATOR,
+    decimals: 8,
+  },
+  {
+    id: 74,
+    from: 'CNY',
+    to: 'USD',
+    address: CNY_USD_AGGREGATOR,
+    decimals: 8,
+  },
+  {
+    id: 75,
+    from: 'COVER',
+    to: 'USD',
+    address: COVER_USD_AGGREGATOR,
+    decimals: 8,
+  },
+  {
+    id: 76,
+    from: 'DPI',
+    to: 'USD',
+    address: DPI_USD_AGGREGATOR,
+    decimals: 8,
+  },
+  {
+    id: 77,
+    from: 'HEGIC',
+    to: 'USD',
+    address: HEGIC_USD_AGGREGATOR,
+    decimals: 8,
+  },
+  {
+    id: 78,
+    from: 'IOST',
+    to: 'USD',
+    address: IOST_USD_AGGREGATOR,
+    decimals: 8,
+  },
+  {
+    id: 79,
+    from: 'TSLA',
+    to: 'USD',
+    address: TSLA_USD_AGGREGATOR,
+    decimals: 8,
+  },
+  {
+    id: 80,
+    from: 'XHV',
+    to: 'USD',
+    address: XHV_USD_AGGREGATOR,
+    decimals: 8,
+  },
+  {
+    id: 81,
+    from: 'BAL',
+    to: 'ETH',
+    address: BAL_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 82,
+    from: 'BAND',
+    to: 'ETH',
+    address: BAND_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 83,
+    from: 'CEL',
+    to: 'ETH',
+    address: CEL_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 84,
+    from: 'COMP',
+    to: 'ETH',
+    address: COMP_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 85,
+    from: 'COVER',
+    to: 'ETH',
+    address: COVER_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 86,
+    from: 'CREAM',
+    to: 'ETH',
+    address: CREAM_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 87,
+    from: 'DPI',
+    to: 'ETH',
+    address: DPI_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 88,
+    from: 'FTT',
+    to: 'ETH',
+    address: FTT_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 89,
+    from: 'HEGIC',
+    to: 'ETH',
+    address: HEGIC_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 90,
+    from: 'KP3R',
+    to: 'ETH',
+    address: KP3R_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 91,
+    from: 'MLN',
+    to: 'ETH',
+    address: MLN_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 92,
+    from: 'MTA',
+    to: 'ETH',
+    address: MTA_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 93,
+    from: 'NMR',
+    to: 'ETH',
+    address: NMR_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 94,
+    from: 'OMG',
+    to: 'ETH',
+    address: OMG_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 95,
+    from: 'RLC',
+    to: 'ETH',
+    address: RLC_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 96,
+    from: 'RUNE',
+    to: 'ETH',
+    address: RUNE_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 97,
+    from: 'SRM',
+    to: 'ETH',
+    address: SRM_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 98,
+    from: 'SUSHI',
+    to: 'ETH',
+    address: SUSHI_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 99,
+    from: 'UMA',
+    to: 'ETH',
+    address: UMA_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 100,
+    from: 'USDK',
+    to: 'ETH',
+    address: USDK_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 101,
+    from: 'UST',
+    to: 'ETH',
+    address: UST_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 102,
+    from: 'WOM',
+    to: 'ETH',
+    address: WNXM_ETH_AGGREGATOR,
+    decimals: 18,
+  },
+  {
+    id: 103,
+    from: 'YFII',
+    to: 'ETH',
+    address: YFII_ETH_AGGREGATOR,
     decimals: 18,
   },
 ];
