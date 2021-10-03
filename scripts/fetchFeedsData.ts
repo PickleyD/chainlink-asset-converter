@@ -14,6 +14,7 @@ const EXCEPTIONS = [
   'marketcap',
   'vesper',
   'tvl',
+  'reserves',
 ];
 
 type RawFeedsData = {
