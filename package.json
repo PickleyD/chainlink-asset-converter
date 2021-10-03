@@ -1,6 +1,6 @@
 {
   "name": "chainlink-asset-converter",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Asset conversion utils powered by Chainlink price feeds",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -9,6 +9,7 @@
   "license": "MIT",
   "keywords": [],
   "scripts": {
+    "prebuild": "npx ts-node scripts/fetchFeedsData.ts",
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
@@ -54,6 +55,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "ava": "^3.12.1",
+    "axios": "^0.22.0",
     "codecov": "^3.5.0",
     "cspell": "^4.1.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -77,7 +79,6 @@
     "build/main",
     "build/module",
     "!**/*.spec.*",
-    "!**/*.json",
     "CHANGELOG.md",
     "LICENSE",
     "README.md"

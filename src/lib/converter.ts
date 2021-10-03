@@ -111,8 +111,8 @@ export const convert = async (options: ConvertProps): Promise<string> => {
       );
 
       return inverse
-        ? new BigNumber(1).dividedBy(exchangeRate).multipliedBy(_newAmount)
-        : exchangeRate.multipliedBy(_newAmount);
+        ? _newAmount.dividedBy(exchangeRate)
+        : _newAmount.multipliedBy(exchangeRate);
     },
     new BigNumber(amount)
   );
